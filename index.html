@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Punchee Monica</title>
+		<title>Punch-in Monica</title>
 
 		<script src="https://unpkg.com/@strudel/web"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -45,6 +45,7 @@
 				<td id="sustainD" class="table-cell-white">0.8</td>
 				<td id="releaseD" class="table-cell-white">1</td>
 				<td id="fxD" class="table-cell-white">echo1</td>
+				<td colspan="1" id="counter" class="table-cell-white">0</td>
 			</tr>
 			<tr>
 				<td>
@@ -135,13 +136,15 @@
 				</td>
 			</tr>
 			<tr>
+			</tr>
+			<tr>
 				<td>
 					<button id="play">&uarr;</button>
 				</td>
 				<td>
 					<button id="stop">p</button>
 				</td>
-				<td colspan="2" class="table-cell-white small-font bold-font">&nbsp;&nbsp;&nbsp;PUNCHEE MONICA</td>
+				<td colspan="2" class="table-cell-white small-font bold-font">&nbsp;&nbsp;&nbsp;PUNCH-IN MONICA</td>
 			</tr>
 			<tr>
 				<td id='input' class="table-cell-white active">IN</td>
@@ -149,7 +152,7 @@
 		</table>
 
 		<a id="fullscreen" onclick="toggleFullscreen()">F</a>
-		<a id="help" onclick="alert('No help, find it out yourself!')">?</a>
+		<a id="help" onclick="alert('Discover!')">?</a>
 	</body>
 
 	<link rel="stylesheet" href="css/style.css">

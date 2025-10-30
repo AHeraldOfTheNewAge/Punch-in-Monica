@@ -1,3 +1,5 @@
+var timerInterval;
+
 // Request fullscreen
 function enterFullscreen() {
 	const element = document.documentElement; // or document.body
@@ -139,6 +141,25 @@ $(document).ready(() => {
 
 		$('#output').addClass('active');
 		$('#input').removeClass('active');
+
+		var counterElement = document.getElementById("counter");
+
+		if (timerInterval) { // Each reevaluate resets the timer to 0
+			clearInterval(timerInterval);
+			counterElement.textContent = 0;
+		}
+
+		var count = 0;
+
+		timerInterval = setInterval(() => { // We do a counter, we increment it each second sound comes out
+			count++;
+
+			if (count > 999) {
+				count = 0;
+			}
+
+			counterElement.textContent = count;
+		}, 1000);
 	});
 
 	$('#stop').on('click', () => {
@@ -146,6 +167,11 @@ $(document).ready(() => {
 
 		$('#input').addClass('active');
 		$('#output').removeClass('active');
+
+		clearInterval(timerInterval); // Stop the counter, reset to 0
+
+		var counterElement = document.getElementById("counter");
+		counterElement.textContent = 0;
 	});
 
 	$('.note').on('click', (evt) => { // Reset note
